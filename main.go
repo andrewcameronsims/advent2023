@@ -8,6 +8,7 @@ import (
 	"aoc-2023/day4"
 	"aoc-2023/day5"
 	"aoc-2023/day6"
+	"aoc-2023/day7"
 	"fmt"
 	"log"
 	"os"
@@ -61,5 +62,11 @@ func main() {
 			log.Fatal(err)
 		}
 		day6.Solution(input)
+	case 7:
+		input, err := common.ReadLinesFromInput(inputPath)
+		if err != nil {
+			log.Fatal(err)
+		}
+		day7.Solution(input)
 	}
 }
