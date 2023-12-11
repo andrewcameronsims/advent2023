@@ -166,3 +166,47 @@ LJJLF-|-L.J.LJL-.7-7JLLL-LLLJLF-|J-|.|-L---JJ-L-|LJLLJ7.--77-J-JJ.L7-FJLL.FL-7-L
 		})
 	}
 }
+
+func TestDay10_PartTwo(t *testing.T) {
+	testCases := []struct {
+		desc  string
+		input string
+		ans   int
+	}{
+		{
+			desc: "",
+			input: `...........
+.S-------7.
+.|F-----7|.
+.||.....||.
+.||.....||.
+.|L-7.F-J|.
+.|..|.|..|.
+.L--J.L--J.
+...........`,
+			ans: 4,
+		},
+		{
+			desc: "",
+			input: `.F----7F7F7F7F-7....
+.|F--7||||||||FJ....
+.||.FJ||||||||L7....
+FJL7L7LJLJ||LJ.L-7..
+L--J.L7...LJS7F-7L7.
+....F-J..F7FJ|L7L7L7
+....L7.F7||L7|.L7L7|
+.....|FJLJ|FJ|F7|.LJ
+....FJL-7.||.||||...
+....L---J.LJ.LJLJ...`,
+			ans: 8,
+		},
+	}
+	for _, tC := range testCases {
+		t.Run(tC.desc, func(t *testing.T) {
+			lines := strings.Split(tC.input, "\n")
+			ans := partTwo(lines)
+
+			assert.Equal(t, tC.ans, ans)
+		})
+	}
+}
